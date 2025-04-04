@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 262.1 83.3% 57.8%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 210 20% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 210 20% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 262.1 83.3% 57.8%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+  .gradient-heading {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-purple to-brand-pink;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-brand-purple/20 hover:-translate-y-1;
+  }
+
+  .button-primary {
+    @apply bg-gradient-to-r from-brand-purple to-brand-pink hover:from-brand-pink hover:to-brand-purple text-white font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-brand-purple/30;
+  }
+
+  .button-secondary {
+    @apply bg-white text-brand-purple border border-brand-purple/30 hover:bg-brand-purple/5 font-medium rounded-lg transition-all duration-300;
+  }
+
+  .button-danger {
+    @apply bg-gradient-to-r from-red-500 to-orange-500 hover:from-orange-500 hover:to-red-500 text-white font-medium rounded-lg transition-all duration-300;
+  }
+
+  .input-custom {
+    @apply border-2 border-brand-purple/20 focus:border-brand-purple/50 focus:ring-brand-purple/30 rounded-lg transition-all duration-300;
+  }
+
+  .table-custom {
+    @apply rounded-xl overflow-hidden border-2 border-brand-purple/10 shadow-md;
+  }
+
+  .table-header {
+    @apply bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 text-gray-700 font-semibold;
+  }
+
+  .table-row-alt {
+    @apply even:bg-brand-purple/5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-purple {
+    @apply bg-brand-purple/10 text-brand-purple;
+  }
+
+  .badge-pink {
+    @apply bg-brand-pink/10 text-brand-pink;
+  }
+
+  .badge-teal {
+    @apply bg-brand-teal/10 text-brand-teal;
+  }
+
+  .badge-orange {
+    @apply bg-brand-orange/10 text-brand-orange;
+  }
+}
+
